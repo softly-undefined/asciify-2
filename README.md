@@ -9,6 +9,13 @@ actual shape, width, and pair spacing while building the image.
 
 ![Asciify beam search forming an image](asciify-2.gif)
 
+## Google Docs Output
+
+The generated ASCII is calibrated to preserve the image when pasted into
+Google Docs using the matching Arial font size:
+
+![Asciify map rendered in Google Docs](asciify-2-map.png)
+
 ## Quick Start
 
 Install the dependencies:
