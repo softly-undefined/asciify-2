@@ -1,24 +1,91 @@
-new asciify plans
+# Asciify
 
-in asciify mk1 i was working with a controlled environment where each character had a fixed equivalent height and width, but now i want it to work with the default settings in a new google doc, with line spacing as single.
+Asciify turns images into variable-width ASCII art designed to render
+accurately in Google Docs.
 
-the unique aspect here is now each character doesnt have a set space that it takes up, more thin characters at the beginning of a line allow for more characters to fit into the line later on. I view this as a search algorithm, where there isnt a set number of characters per line (the minimum is the max number of the thickest character, the max is the max number of the thinnest character)
+Instead of treating every character as the same size, it uses glyphs measured
+from Google Docs PDF exports. The beam search accounts for each character's
+actual shape, width, and pair spacing while building the image.
 
-the overall idea is to divide the image into strips, and use a search algorithm to search for an optimal string to represent that horizontal strip. Optimal is defined by arithmetic distance between that strip and 
+![Asciify beam search forming an image](asciify-2.gif)
 
-I will provide screenshots of each character (including the whitespace below the character, and to the right of the character before the next one begins) which should let you establish the width of each individual character.
+## Quick Start
 
-one hyperparameter im concerned about tuning for each input image is "num_lines" which should range from 5 to the number of lines possible in one page (51). This impacts the thickness of each horizontal strip. I'm curious on how to improve this- for the first approach do this:
+Install the dependencies:
 
-1. start at num_lines=5
-2. select 5 random lines
-3. run the search algorithm on these 5 lines, save the mean of the result
-4. num_lines +=5
-5. if num_lines =max(num_lines) continue, else goto 2
-6. for each tuple (num_lines, mean result) divide mean result by num_lines
-7. choose the highest of these values
-8. run the search algorithm on the remaining lines for this chosen num_lines, save results!
+```bash
+python3 -m pip install -r requirements.txt
+```
 
-In terms of the search algorithm, for the first attempt I want to use a beam search algorithm.
+Place an image in `input/`, then render it:
 
-Work entirely in the asciify-mk2 folder.
+```bash
+python3 asciify_mk2.py input/example.png --font-size 11
+```
+
+The generated text and report will be written to:
+
+```text
+output/example/font_11.txt
+output/example/font_11_report.json
+```
+
+Copy the text into Google Docs, select all, and apply the matching Arial font
+size. Available calibrated sizes are `1`, `5`, `8`, `11`, `15`, and `20`.
+Google Docs displays size `1` as `2.25pt`.
+
+## Watch the Search
+
+Asciify can record the image forming as every row searches concurrently:
+
+```bash
+python3 asciify_mk2.py input/example.png \
+  --font-size 11 \
+  --visualize-progress output/example/font_11_progress.mp4 \
+  --workers 8
+```
+
+This requires `ffmpeg`.
+
+## How It Works
+
+1. Google Docs calibration PDFs provide exact Arial glyph shapes, widths, line
+   heights, and pair-spacing adjustments.
+2. The source image is divided into horizontal rows.
+3. A beam search builds the best character sequence for each row.
+4. The final text, quality scores, and layout settings are saved together.
+
+The bundled calibration models cover all printable ASCII characters at each
+supported font size.
+
+## Diagnostic Preview
+
+Render the exact image Asciify believes its text produces:
+
+```bash
+python3 render_glyph_preview.py output/example/font_11.txt \
+  --report output/example/font_11_report.json \
+  --output output/example/font_11_preview.png
+```
+
+Comparing this preview with Google Docs helps distinguish search-quality issues
+from text-rendering differences.
+
+## More Commands
+
+See [COMMANDS.md](COMMANDS.md) for:
+
+- rendering every calibrated font size,
+- quality and layout controls,
+- progress-video settings,
+- diagnostic previews,
+- rebuilding calibration models.
+
+## Project Layout
+
+- `asciify_mk2.py`: main beam-search renderer.
+- `render_glyph_preview.py`: diagnostic renderer for generated text.
+- `input/`: source images.
+- `output/`: generated text, reports, previews, and videos.
+- `calibration-models/`: extracted Google Docs glyph and layout data.
+- `calibration-pdfs/`: source Google Docs calibration exports.
