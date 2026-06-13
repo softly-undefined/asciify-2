@@ -1,0 +1,1076 @@
+{
+  "input": "input/test.png",
+  "glyph_dir": "final_data",
+  "glyph_manifest": null,
+  "output": "output/test_ascii.txt",
+  "num_lines_mode": "fixed",
+  "chosen_num_lines": 50,
+  "selection_metric": "balanced",
+  "line_width": 1402,
+  "glyph_height": 34,
+  "beam_width": 40,
+  "sample_lines": 5,
+  "sample_mode": "stratified",
+  "seed": 0,
+  "resolution_weight": 0.03,
+  "mean_score": 0.980260467881563,
+  "mean_distance": 0.01973953211843702,
+  "candidate_evaluations": [
+    {
+      "num_lines": 50,
+      "sampled_lines": [],
+      "mean_score": 0.980260467881563,
+      "mean_distance": 0.01973953211843702,
+      "score_per_line": 0.01960520935763126,
+      "tuning_score": 0.980260467881563
+    }
+  ],
+  "lines": [
+    {
+      "line_index": 0,
+      "score": 0.9960791205383541,
+      "distance": 0.0039208794616458495,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 1,
+      "score": 0.9960784624014424,
+      "distance": 0.003921537598557667,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 2,
+      "score": 0.9960784624014424,
+      "distance": 0.003921537598557667,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 3,
+      "score": 0.9948891081685557,
+      "distance": 0.005110891831444346,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 4,
+      "score": 0.9844227548567672,
+      "distance": 0.015577245143232724,
+      "rendered_width": 174,
+      "char_count": 30,
+      "text": "                             @"
+    },
+    {
+      "line_index": 5,
+      "score": 0.9905565198239858,
+      "distance": 0.009443480176014159,
+      "rendered_width": 180,
+      "char_count": 32,
+      "text": "                            .Q`'"
+    },
+    {
+      "line_index": 6,
+      "score": 0.9930585478564942,
+      "distance": 0.006941452143505795,
+      "rendered_width": 167,
+      "char_count": 32,
+      "text": "                               1"
+    },
+    {
+      "line_index": 7,
+      "score": 0.9930276151015333,
+      "distance": 0.006972384898466703,
+      "rendered_width": 173,
+      "char_count": 32,
+      "text": "                               T"
+    },
+    {
+      "line_index": 8,
+      "score": 0.993001700640525,
+      "distance": 0.006998299359475005,
+      "rendered_width": 167,
+      "char_count": 32,
+      "text": "                               1"
+    },
+    {
+      "line_index": 9,
+      "score": 0.9930061427445742,
+      "distance": 0.0069938572554257405,
+      "rendered_width": 173,
+      "char_count": 32,
+      "text": "                               T"
+    },
+    {
+      "line_index": 10,
+      "score": 0.9930911262738401,
+      "distance": 0.006908873726159842,
+      "rendered_width": 167,
+      "char_count": 32,
+      "text": "                               1"
+    },
+    {
+      "line_index": 11,
+      "score": 0.9853804216402794,
+      "distance": 0.01461957835972064,
+      "rendered_width": 609,
+      "char_count": 81,
+      "text": "                               1                                                _"
+    },
+    {
+      "line_index": 12,
+      "score": 0.9237345905149704,
+      "distance": 0.07626540948502958,
+      "rendered_width": 1164,
+      "char_count": 106,
+      "text": "                               T                                            J_YqTYm] YT4}rurq1r) 1wfV}]1'|"
+    },
+    {
+      "line_index": 13,
+      "score": 0.9875147062939686,
+      "distance": 0.012485293706031396,
+      "rendered_width": 1164,
+      "char_count": 142,
+      "text": "                _             [                                                    '                _                         `\"            `\""
+    },
+    {
+      "line_index": 14,
+      "score": 0.9822854080938539,
+      "distance": 0.017714591906146136,
+      "rendered_width": 523,
+      "char_count": 94,
+      "text": "               `v^\\      .T                                                                _/'"
+    },
+    {
+      "line_index": 15,
+      "score": 0.9793295065403544,
+      "distance": 0.02067049345964552,
+      "rendered_width": 501,
+      "char_count": 88,
+      "text": "               2Z`        T                                                           _7"
+    },
+    {
+      "line_index": 16,
+      "score": 0.9717765308380767,
+      "distance": 0.028223469161923285,
+      "rendered_width": 485,
+      "char_count": 86,
+      "text": "             ``C{         1                                                         @i"
+    },
+    {
+      "line_index": 17,
+      "score": 0.9605529035904308,
+      "distance": 0.03944709640956919,
+      "rendered_width": 486,
+      "char_count": 76,
+      "text": "              ` C[         T                                         __@$,,_"
+    },
+    {
+      "line_index": 18,
+      "score": 0.9706222213391461,
+      "distance": 0.029377778660853938,
+      "rendered_width": 516,
+      "char_count": 86,
+      "text": "              _z`         1                                   _v*`       `\"`       `N,"
+    },
+    {
+      "line_index": 19,
+      "score": 0.9762798988377477,
+      "distance": 0.023720101162252323,
+      "rendered_width": 544,
+      "char_count": 92,
+      "text": "            `J_T        T                             _r`                                 A,"
+    },
+    {
+      "line_index": 20,
+      "score": 0.980469332078094,
+      "distance": 0.019530667921906,
+      "rendered_width": 561,
+      "char_count": 102,
+      "text": "                 ,,,,        .T                         _*                                           A"
+    },
+    {
+      "line_index": 21,
+      "score": 0.9778902173489945,
+      "distance": 0.02210978265100551,
+      "rendered_width": 586,
+      "char_count": 106,
+      "text": "                ~~        1                        y`                                                   1,"
+    },
+    {
+      "line_index": 22,
+      "score": 0.9778299137738624,
+      "distance": 0.02217008622613761,
+      "rendered_width": 601,
+      "char_count": 110,
+      "text": "                *-/        .T                    y                                                          1,"
+    },
+    {
+      "line_index": 23,
+      "score": 0.9799086705714232,
+      "distance": 0.02009132942857684,
+      "rendered_width": 616,
+      "char_count": 112,
+      "text": "             . J.J        .1                 _f                                                               1,"
+    },
+    {
+      "line_index": 24,
+      "score": 0.9779925570423355,
+      "distance": 0.022007442957664523,
+      "rendered_width": 630,
+      "char_count": 113,
+      "text": "            `  Y1.        1                Y                                                                    A"
+    },
+    {
+      "line_index": 25,
+      "score": 0.9777469862584771,
+      "distance": 0.022253013741522915,
+      "rendered_width": 637,
+      "char_count": 119,
+      "text": "             `**);         1              J'                                                                         1,"
+    },
+    {
+      "line_index": 26,
+      "score": 0.9792109511113061,
+      "distance": 0.02078904888869392,
+      "rendered_width": 649,
+      "char_count": 118,
+      "text": "               `JJ         4           V                                                                             A"
+    },
+    {
+      "line_index": 27,
+      "score": 0.9775780881922688,
+      "distance": 0.022421911807731263,
+      "rendered_width": 661,
+      "char_count": 122,
+      "text": "               `*p         1          J`                                                                                 A"
+    },
+    {
+      "line_index": 28,
+      "score": 0.9793260443017539,
+      "distance": 0.020673955698246184,
+      "rendered_width": 668,
+      "char_count": 124,
+      "text": "                _^         T       J                                                                                       1"
+    },
+    {
+      "line_index": 29,
+      "score": 0.979122511270393,
+      "distance": 0.02087748872960705,
+      "rendered_width": 682,
+      "char_count": 123,
+      "text": "            `J---         T     Y                                                                                         A"
+    },
+    {
+      "line_index": 30,
+      "score": 0.9862174171623972,
+      "distance": 0.013782582837602801,
+      "rendered_width": 693,
+      "char_count": 132,
+      "text": "                               T  . 7                                                                                             1,"
+    },
+    {
+      "line_index": 31,
+      "score": 0.9862547667122351,
+      "distance": 0.013745233287764865,
+      "rendered_width": 703,
+      "char_count": 134,
+      "text": "                               T   7                                                                                               .1,"
+    },
+    {
+      "line_index": 32,
+      "score": 0.9874785083836933,
+      "distance": 0.012521491616306623,
+      "rendered_width": 1162,
+      "char_count": 136,
+      "text": "                               T  7                                                                                                   1,"
+    },
+    {
+      "line_index": 33,
+      "score": 0.9894058093900017,
+      "distance": 0.010594190609998288,
+      "rendered_width": 1162,
+      "char_count": 140,
+      "text": "                               T                                                                                                         .1,"
+    },
+    {
+      "line_index": 34,
+      "score": 0.8141623399342088,
+      "distance": 0.18583766006579122,
+      "rendered_width": 1317,
+      "char_count": 254,
+      "text": "                               T                                                                           .                                1,                                                                                                             _,_"
+    },
+    {
+      "line_index": 35,
+      "score": 0.9504346312882966,
+      "distance": 0.04956536871170331,
+      "rendered_width": 1313,
+      "char_count": 214,
+      "text": "                        `````T```````````````````````````````````````````````````````````````````````````````T````       ```          ```   ``       `                   `                                         T*`"
+    },
+    {
+      "line_index": 36,
+      "score": 0.9894919446063459,
+      "distance": 0.010508055393654018,
+      "rendered_width": 1161,
+      "char_count": 146,
+      "text": "                               T                                                                                                                1,"
+    },
+    {
+      "line_index": 37,
+      "score": 0.9895936281009139,
+      "distance": 0.010406371899086067,
+      "rendered_width": 1161,
+      "char_count": 148,
+      "text": "                               T                                                                                                                  1,"
+    },
+    {
+      "line_index": 38,
+      "score": 0.9895949443022136,
+      "distance": 0.010405055697786336,
+      "rendered_width": 1161,
+      "char_count": 150,
+      "text": "                               T                                                                                                                    1,"
+    },
+    {
+      "line_index": 39,
+      "score": 0.9913223331793048,
+      "distance": 0.008677666820695139,
+      "rendered_width": 1164,
+      "char_count": 152,
+      "text": "                               T                                                                                                                      `t"
+    },
+    {
+      "line_index": 40,
+      "score": 0.9946915751972224,
+      "distance": 0.005308424802777591,
+      "rendered_width": 167,
+      "char_count": 32,
+      "text": "                               1"
+    },
+    {
+      "line_index": 41,
+      "score": 0.9894328798395061,
+      "distance": 0.010567120160493933,
+      "rendered_width": 607,
+      "char_count": 116,
+      "text": "                                                                                                                   _"
+    },
+    {
+      "line_index": 42,
+      "score": 0.9428572153008763,
+      "distance": 0.05714278469912366,
+      "rendered_width": 1162,
+      "char_count": 135,
+      "text": "                                                                                                                .T  `]q+}z]1r  T_mqy+Hq"
+    },
+    {
+      "line_index": 43,
+      "score": 0.987773605827028,
+      "distance": 0.012226394172971998,
+      "rendered_width": 1161,
+      "char_count": 157,
+      "text": "                                                                                                                    ``  ` `  `` ` ` ` `   ``` `` `  `-7 ` ` `"
+    },
+    {
+      "line_index": 44,
+      "score": 0.9960784624014424,
+      "distance": 0.003921537598557667,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 45,
+      "score": 0.9960784624014424,
+      "distance": 0.003921537598557667,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 46,
+      "score": 0.9960784624014424,
+      "distance": 0.003921537598557667,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 47,
+      "score": 0.9960784624014424,
+      "distance": 0.003921537598557667,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 48,
+      "score": 0.9960784624014424,
+      "distance": 0.003921537598557667,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    },
+    {
+      "line_index": 49,
+      "score": 0.9960784624014424,
+      "distance": 0.003921537598557667,
+      "rendered_width": 0,
+      "char_count": 0,
+      "text": ""
+    }
+  ],
+  "glyphs": [
+    {
+      "char": " ",
+      "width": 5,
+      "height": 34,
+      "path": null,
+      "synthetic": true
+    },
+    {
+      "char": "a",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.46.19\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "b",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.46.23\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "c",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.08\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "d",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.10\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "e",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.28\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "f",
+      "width": 10,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.32\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "g",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.35\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "h",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.38\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "i",
+      "width": 5,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.42\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "j",
+      "width": 5,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.46\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "k",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.49\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "l",
+      "width": 5,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.53\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "m",
+      "width": 23,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.56\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "n",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.00\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "o",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.04\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "p",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.07\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "q",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.10\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "r",
+      "width": 11,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.15\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "s",
+      "width": 14,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.17\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "t",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.20\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "u",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.23\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "v",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.26\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "w",
+      "width": 21,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.29\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "x",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.33\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "y",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.36\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "z",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.40\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "A",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.44\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "B",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.47\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "C",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.51\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "D",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.55\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "E",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.59\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "F",
+      "width": 17,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.03\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "G",
+      "width": 22,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.07\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "H",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.09\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "I",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.13\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "J",
+      "width": 13,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.16\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "K",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.21\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "L",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.35\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "M",
+      "width": 23,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.39\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "N",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.42\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "O",
+      "width": 22,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.46\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "P",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.49\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "Q",
+      "width": 22,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.52\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "R",
+      "width": 21,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.56\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "S",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.00\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "T",
+      "width": 18,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.04\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "U",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.07\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "V",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.10\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "W",
+      "width": 28,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.13\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "X",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.25\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "Y",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.28\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "Z",
+      "width": 18,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.32\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "1",
+      "width": 12,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.54\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "2",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.57\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "3",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.00\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "4",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.04\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "5",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.08\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "6",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.11\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "7",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.14\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "8",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.18\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "9",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.21\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "0",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.24\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "!",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.28\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "@",
+      "width": 29,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.35\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "#",
+      "width": 17,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.41\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "$",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.07\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "%",
+      "width": 25,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.12\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "^",
+      "width": 13,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.16\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "&",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.21\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "*",
+      "width": 11,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.24\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "(",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.28\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": ")",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.32\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "-",
+      "width": 10,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.38\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "_",
+      "width": 17,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.43\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "+",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.53\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "=",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.56\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "{",
+      "width": 10,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.01\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "}",
+      "width": 10,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.05\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "[",
+      "width": 8,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.09\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "]",
+      "width": 7,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.12\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "|",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.16\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "\\",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.20\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": ";",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.30\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "\"",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.33\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "'",
+      "width": 5,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.38\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "?",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.43\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "/",
+      "width": 8,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.47\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": ".",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.50\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": ",",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.55\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "~",
+      "width": 17,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.57.05\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "`",
+      "width": 7,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.57.09\u202fPM.png",
+      "synthetic": false
+    }
+  ]
+}

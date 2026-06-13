@@ -1,0 +1,1828 @@
+{
+  "input": "input/IMG_8862.JPG",
+  "glyph_dir": "final_data",
+  "glyph_manifest": null,
+  "output": "output/IMG_8862_ascii.txt",
+  "num_lines_mode": "auto",
+  "chosen_num_lines": 110,
+  "selection_metric": "balanced",
+  "line_width": 624,
+  "glyph_height": 34,
+  "beam_width": 40,
+  "sample_lines": 5,
+  "sample_mode": "stratified",
+  "seed": 0,
+  "resolution_weight": 0.03,
+  "mean_score": 0.5564499742091602,
+  "mean_distance": 0.4435500257908399,
+  "candidate_evaluations": [
+    {
+      "num_lines": 20,
+      "sampled_lines": [
+        2,
+        6,
+        10,
+        14,
+        18
+      ],
+      "mean_score": 0.5477012207245575,
+      "mean_distance": 0.45229877927544243,
+      "score_per_line": 0.027385061036227877,
+      "tuning_score": 0.5477012207245575
+    },
+    {
+      "num_lines": 25,
+      "sampled_lines": [
+        2,
+        7,
+        12,
+        17,
+        22
+      ],
+      "mean_score": 0.5519691071359281,
+      "mean_distance": 0.4480308928640719,
+      "score_per_line": 0.022078764285437123,
+      "tuning_score": 0.5535995419185368
+    },
+    {
+      "num_lines": 30,
+      "sampled_lines": [
+        3,
+        9,
+        15,
+        21,
+        27
+      ],
+      "mean_score": 0.5478768540004081,
+      "mean_distance": 0.45212314599959197,
+      "score_per_line": 0.018262561800013604,
+      "tuning_score": 0.5511377235656255
+    },
+    {
+      "num_lines": 35,
+      "sampled_lines": [
+        3,
+        10,
+        17,
+        24,
+        31
+      ],
+      "mean_score": 0.5532880161862208,
+      "mean_distance": 0.44671198381377913,
+      "score_per_line": 0.015808229033892025,
+      "tuning_score": 0.5581793205340468
+    },
+    {
+      "num_lines": 40,
+      "sampled_lines": [
+        4,
+        12,
+        20,
+        28,
+        36
+      ],
+      "mean_score": 0.5511609101277491,
+      "mean_distance": 0.44883908987225096,
+      "score_per_line": 0.013779022753193728,
+      "tuning_score": 0.5576826492581839
+    },
+    {
+      "num_lines": 45,
+      "sampled_lines": [
+        4,
+        13,
+        22,
+        31,
+        40
+      ],
+      "mean_score": 0.5545913562066235,
+      "mean_distance": 0.4454086437933765,
+      "score_per_line": 0.012324252360147189,
+      "tuning_score": 0.5627435301196669
+    },
+    {
+      "num_lines": 50,
+      "sampled_lines": [
+        5,
+        15,
+        25,
+        35,
+        45
+      ],
+      "mean_score": 0.5525754923194782,
+      "mean_distance": 0.4474245076805219,
+      "score_per_line": 0.011051509846389564,
+      "tuning_score": 0.5623581010151304
+    },
+    {
+      "num_lines": 55,
+      "sampled_lines": [
+        5,
+        16,
+        27,
+        38,
+        49
+      ],
+      "mean_score": 0.5549983773655841,
+      "mean_distance": 0.4450016226344159,
+      "score_per_line": 0.010090879588465166,
+      "tuning_score": 0.566411420843845
+    },
+    {
+      "num_lines": 60,
+      "sampled_lines": [
+        6,
+        18,
+        30,
+        42,
+        54
+      ],
+      "mean_score": 0.5542100357793575,
+      "mean_distance": 0.44578996422064254,
+      "score_per_line": 0.009236833929655958,
+      "tuning_score": 0.5672535140402271
+    },
+    {
+      "num_lines": 65,
+      "sampled_lines": [
+        6,
+        19,
+        32,
+        45,
+        58
+      ],
+      "mean_score": 0.5558204716776651,
+      "mean_distance": 0.444179528322335,
+      "score_per_line": 0.008551084179656387,
+      "tuning_score": 0.5704943847211434
+    },
+    {
+      "num_lines": 70,
+      "sampled_lines": [
+        7,
+        21,
+        35,
+        49,
+        63
+      ],
+      "mean_score": 0.554397757668301,
+      "mean_distance": 0.44560224233169904,
+      "score_per_line": 0.007919967966690014,
+      "tuning_score": 0.5707021054943879
+    },
+    {
+      "num_lines": 75,
+      "sampled_lines": [
+        7,
+        22,
+        37,
+        52,
+        67
+      ],
+      "mean_score": 0.5557842809959774,
+      "mean_distance": 0.4442157190040226,
+      "score_per_line": 0.007410457079946366,
+      "tuning_score": 0.5737190636046731
+    },
+    {
+      "num_lines": 80,
+      "sampled_lines": [
+        8,
+        24,
+        40,
+        56,
+        72
+      ],
+      "mean_score": 0.5552845108023596,
+      "mean_distance": 0.4447154891976404,
+      "score_per_line": 0.006941056385029495,
+      "tuning_score": 0.574849728193664
+    },
+    {
+      "num_lines": 85,
+      "sampled_lines": [
+        8,
+        25,
+        42,
+        59,
+        76
+      ],
+      "mean_score": 0.5567342102797322,
+      "mean_distance": 0.44326578972026776,
+      "score_per_line": 0.006549814238585085,
+      "tuning_score": 0.5779298624536453
+    },
+    {
+      "num_lines": 90,
+      "sampled_lines": [
+        9,
+        27,
+        45,
+        62,
+        81
+      ],
+      "mean_score": 0.5552752312312119,
+      "mean_distance": 0.4447247687687881,
+      "score_per_line": 0.00616972479145791,
+      "tuning_score": 0.5781013181877337
+    },
+    {
+      "num_lines": 95,
+      "sampled_lines": [
+        9,
+        28,
+        47,
+        66,
+        85
+      ],
+      "mean_score": 0.5570958306167281,
+      "mean_distance": 0.44290416938327193,
+      "score_per_line": 0.0058641666380708215,
+      "tuning_score": 0.5815523523558586
+    },
+    {
+      "num_lines": 100,
+      "sampled_lines": [
+        10,
+        30,
+        50,
+        70,
+        90
+      ],
+      "mean_score": 0.5566256004221298,
+      "mean_distance": 0.4433743995778701,
+      "score_per_line": 0.005566256004221298,
+      "tuning_score": 0.5827125569438689
+    },
+    {
+      "num_lines": 105,
+      "sampled_lines": [
+        10,
+        31,
+        52,
+        73,
+        94
+      ],
+      "mean_score": 0.5574900217005929,
+      "mean_distance": 0.4425099782994071,
+      "score_per_line": 0.005309428778100885,
+      "tuning_score": 0.5852074130049407
+    },
+    {
+      "num_lines": 110,
+      "sampled_lines": [
+        11,
+        33,
+        55,
+        77,
+        99
+      ],
+      "mean_score": 0.5571972004159005,
+      "mean_distance": 0.44280279958409957,
+      "score_per_line": 0.005065429094690005,
+      "tuning_score": 0.586545026502857
+    },
+    {
+      "num_lines": 112,
+      "sampled_lines": [
+        11,
+        33,
+        56,
+        78,
+        100
+      ],
+      "mean_score": 0.5564603150789914,
+      "mean_distance": 0.4435396849210086,
+      "score_per_line": 0.004968395670348138,
+      "tuning_score": 0.5864603150789914
+    }
+  ],
+  "lines": [
+    {
+      "line_index": 0,
+      "score": 0.6908827666108964,
+      "distance": 0.3091172333891036,
+      "rendered_width": 624,
+      "char_count": 72,
+      "text": "(%@@@%W#@@}  `  \\     _Fy                \" ,  '      ,' .     .  .   ){]"
+    },
+    {
+      "line_index": 1,
+      "score": 0.6748186754425187,
+      "distance": 0.32518132455748133,
+      "rendered_width": 623,
+      "char_count": 69,
+      "text": "@MWR@@%@@[{\\ '   ;   J%} I         .. , `           /_           ,/^]"
+    },
+    {
+      "line_index": 2,
+      "score": 0.6682533455470389,
+      "distance": 0.33174665445296114,
+      "rendered_width": 624,
+      "char_count": 65,
+      "text": "@%@@T@_P@@g,`_\\._)]T           ' `     ,       /,  ; .   ,;  _\" J"
+    },
+    {
+      "line_index": 3,
+      "score": 0.6511689370461539,
+      "distance": 0.34883106295384614,
+      "rendered_width": 622,
+      "char_count": 61,
+      "text": "@@@@+@@%@#/ \\\" , Tf |/   I,               .      u`_\\{\";  -#S"
+    },
+    {
+      "line_index": 4,
+      "score": 0.6351913554456259,
+      "distance": 0.36480864455437406,
+      "rendered_width": 624,
+      "char_count": 56,
+      "text": "@%@@@@@%@g  ;\\ -)TT  ,/ \",                  / _y\"\"\\|_@]|"
+    },
+    {
+      "line_index": 5,
+      "score": 0.616037846038604,
+      "distance": 0.383962153961396,
+      "rendered_width": 623,
+      "char_count": 47,
+      "text": "@F@@@@@%@@,;w%\"_F\\  , .`   ,  ..  z .;T; _  vA@"
+    },
+    {
+      "line_index": 6,
+      "score": 0.6246654458714826,
+      "distance": 0.3753345541285174,
+      "rendered_width": 624,
+      "char_count": 47,
+      "text": "@T@&@B@%%@@JAJ\\ g~\\*; ..   /    ,;`      %T{@f%"
+    },
+    {
+      "line_index": 7,
+      "score": 0.616328601384055,
+      "distance": 0.38367139861594496,
+      "rendered_width": 620,
+      "char_count": 45,
+      "text": "@@@_@@@@B_@__fT]%_}    .   ,/   `_,.\" /  /-@@"
+    },
+    {
+      "line_index": 8,
+      "score": 0.6087154044824488,
+      "distance": 0.3912845955175512,
+      "rendered_width": 624,
+      "char_count": 46,
+      "text": "@@@@@@M;Tq@_@|]  F_\"Tz `   |\"        ./~_,_%@]"
+    },
+    {
+      "line_index": 9,
+      "score": 0.6046119536389772,
+      "distance": 0.39538804636102276,
+      "rendered_width": 624,
+      "char_count": 42,
+      "text": "@@@@@@@|_)@@FJ_ |  I -@_/  ;|'-,  _zF|_W@|"
+    },
+    {
+      "line_index": 10,
+      "score": 0.5934551803235015,
+      "distance": 0.40654481967649847,
+      "rendered_width": 624,
+      "char_count": 39,
+      "text": "B_@@@@F%@g@@@&I /_V/, `   /^,._%{%T4T?!"
+    },
+    {
+      "line_index": 11,
+      "score": 0.614807180824323,
+      "distance": 0.38519281917567705,
+      "rendered_width": 624,
+      "char_count": 49,
+      "text": "[F_@@@@_#^1@@@@f_ \"'/  \"; ,     ' ,   `%T.*  %#rx"
+    },
+    {
+      "line_index": 12,
+      "score": 0.5892214218595628,
+      "distance": 0.41077857814043717,
+      "rendered_width": 623,
+      "char_count": 41,
+      "text": "@\"@@@@TT_*@@@@s|;   ;_,`; - _~*|\"\\y{._Wa%"
+    },
+    {
+      "line_index": 13,
+      "score": 0.5688402102543757,
+      "distance": 0.43115978974562424,
+      "rendered_width": 623,
+      "char_count": 40,
+      "text": "@^@@@@c@@@@@{F{_y\"*;|;.,\"  /  .\"@vf,,@@{"
+    },
+    {
+      "line_index": 14,
+      "score": 0.5653794487856811,
+      "distance": 0.4346205512143188,
+      "rendered_width": 620,
+      "char_count": 33,
+      "text": "#A@@@U@J@@@@@H]*T\\f_q\"T   _Tz__@@"
+    },
+    {
+      "line_index": 15,
+      "score": 0.568012308391151,
+      "distance": 0.431987691608849,
+      "rendered_width": 624,
+      "char_count": 31,
+      "text": "@ 1@@@@@@@@@@Ws|f-\"T} __#@WW@|]"
+    },
+    {
+      "line_index": 16,
+      "score": 0.5550563054926255,
+      "distance": 0.4449436945073745,
+      "rendered_width": 624,
+      "char_count": 29,
+      "text": "@WM@@@\"@@@@@F-W@-g_%q@__,%@[|"
+    },
+    {
+      "line_index": 17,
+      "score": 0.55427295113401,
+      "distance": 0.44572704886599,
+      "rendered_width": 623,
+      "char_count": 26,
+      "text": "@F@@@@@@@@@@@X@FJQ#6_%_@Rg"
+    },
+    {
+      "line_index": 18,
+      "score": 0.5656108665610151,
+      "distance": 0.4343891334389849,
+      "rendered_width": 624,
+      "char_count": 33,
+      "text": "@#@@@W\"?@@@@@{%V4T*/.;f; _W\\_T@@|"
+    },
+    {
+      "line_index": 19,
+      "score": 0.5641363930198762,
+      "distance": 0.43586360698012383,
+      "rendered_width": 622,
+      "char_count": 33,
+      "text": "@@@@@4 _@@@@@F#-T4F__r,,,,,*FWm@$"
+    },
+    {
+      "line_index": 20,
+      "score": 0.548017407973967,
+      "distance": 0.451982592026033,
+      "rendered_width": 624,
+      "char_count": 31,
+      "text": "@G@@@@@@@@@@T@Qp{ '\\\\\\)\" _%w@@]"
+    },
+    {
+      "line_index": 21,
+      "score": 0.5516075613272136,
+      "distance": 0.4483924386727864,
+      "rendered_width": 623,
+      "char_count": 29,
+      "text": "@#@@@WB@@@@@F&@@y* ,\\__@%@@||"
+    },
+    {
+      "line_index": 22,
+      "score": 0.555072757093795,
+      "distance": 0.44492724290620506,
+      "rendered_width": 624,
+      "char_count": 36,
+      "text": "@F@@@@M@@%@@F8)|{ %U, \", `f_*_f _@@["
+    },
+    {
+      "line_index": 23,
+      "score": 0.5422681399240393,
+      "distance": 0.4577318600759607,
+      "rendered_width": 624,
+      "char_count": 28,
+      "text": "@@@@@@@@@@@#@@_FA_;.,_%f%@@|"
+    },
+    {
+      "line_index": 24,
+      "score": 0.543828554822309,
+      "distance": 0.45617144517769104,
+      "rendered_width": 624,
+      "char_count": 28,
+      "text": "@B@@@@@@@@@@@@FT\"^_Tt w`@@@]"
+    },
+    {
+      "line_index": 25,
+      "score": 0.5455131969480673,
+      "distance": 0.45448680305193273,
+      "rendered_width": 624,
+      "char_count": 26,
+      "text": "@#@@@@@@@@@@@&#@FOE]TuJ%@@"
+    },
+    {
+      "line_index": 26,
+      "score": 0.5360410618925886,
+      "distance": 0.4639589381074114,
+      "rendered_width": 623,
+      "char_count": 27,
+      "text": "@9@@@@@@@@@@@@@&})T,Tw\\M@@{"
+    },
+    {
+      "line_index": 27,
+      "score": 0.5405064290824879,
+      "distance": 0.45949357091751214,
+      "rendered_width": 624,
+      "char_count": 27,
+      "text": "@@@@@@@@@@@F@@@sTf*{_%%@@|]"
+    },
+    {
+      "line_index": 28,
+      "score": 0.5404450706407136,
+      "distance": 0.45955492935928643,
+      "rendered_width": 624,
+      "char_count": 27,
+      "text": "@@@@@@@@@g@@@@F@T\\_TT_@@F)j"
+    },
+    {
+      "line_index": 29,
+      "score": 0.5421465101285219,
+      "distance": 0.45785348987147817,
+      "rendered_width": 624,
+      "char_count": 30,
+      "text": "@@@@@@a@@@@W@@@F|/{)_| ;\\`@@@$"
+    },
+    {
+      "line_index": 30,
+      "score": 0.5224826695512683,
+      "distance": 0.47751733044873174,
+      "rendered_width": 624,
+      "char_count": 28,
+      "text": "@@@&@@@@@@@E@@@g|}'{_,_U@@@#"
+    },
+    {
+      "line_index": 31,
+      "score": 0.5010487849895771,
+      "distance": 0.49895121501042294,
+      "rendered_width": 624,
+      "char_count": 24,
+      "text": "@@@@B@@@@@@&@@@@%TMC@@@]"
+    },
+    {
+      "line_index": 32,
+      "score": 0.48219528169473735,
+      "distance": 0.5178047183052626,
+      "rendered_width": 624,
+      "char_count": 23,
+      "text": "@@@@@@@@@@g%@@@XW@m@@D@"
+    },
+    {
+      "line_index": 33,
+      "score": 0.47629757596356836,
+      "distance": 0.5237024240364316,
+      "rendered_width": 624,
+      "char_count": 25,
+      "text": "@@@@@@@@@@@_@@g@T@d%@@@]j"
+    },
+    {
+      "line_index": 34,
+      "score": 0.4798086146243917,
+      "distance": 0.5201913853756083,
+      "rendered_width": 624,
+      "char_count": 24,
+      "text": "@@@@@@@@@@@@@@@T@p%@@@[|"
+    },
+    {
+      "line_index": 35,
+      "score": 0.47603325534550134,
+      "distance": 0.5239667446544987,
+      "rendered_width": 624,
+      "char_count": 24,
+      "text": "@@@@@@@@@@@FP@@%%@{@@@@|"
+    },
+    {
+      "line_index": 36,
+      "score": 0.46925811781962357,
+      "distance": 0.5307418821803764,
+      "rendered_width": 624,
+      "char_count": 23,
+      "text": "@@@@@@@@@@MF@@@%@@@@@@["
+    },
+    {
+      "line_index": 37,
+      "score": 0.4720706429057172,
+      "distance": 0.5279293570942828,
+      "rendered_width": 624,
+      "char_count": 23,
+      "text": "@@@@@@@@@@@@AA@W@@W@@@|"
+    },
+    {
+      "line_index": 38,
+      "score": 0.48882400971552187,
+      "distance": 0.5111759902844781,
+      "rendered_width": 624,
+      "char_count": 24,
+      "text": "@@@@@@@@@@@g@&@@@@F@@@8|"
+    },
+    {
+      "line_index": 39,
+      "score": 0.5046285791814238,
+      "distance": 0.49537142081857627,
+      "rendered_width": 624,
+      "char_count": 27,
+      "text": "@@@M@@@@@@@a*_g@@mS4P**@@@["
+    },
+    {
+      "line_index": 40,
+      "score": 0.4943407432346143,
+      "distance": 0.5056592567653857,
+      "rendered_width": 624,
+      "char_count": 33,
+      "text": "@@@@@@@@@@@@@@@ ,          __@@@]"
+    },
+    {
+      "line_index": 41,
+      "score": 0.4460002430244089,
+      "distance": 0.5539997569755911,
+      "rendered_width": 624,
+      "char_count": 22,
+      "text": "@@@%@@@@@@@@@@@@@@@@@B"
+    },
+    {
+      "line_index": 42,
+      "score": 0.4521602167443093,
+      "distance": 0.5478397832556907,
+      "rendered_width": 624,
+      "char_count": 23,
+      "text": "D@@@@@@@@@@@@@@@@@@@@Bj"
+    },
+    {
+      "line_index": 43,
+      "score": 0.4630560011885285,
+      "distance": 0.5369439988114715,
+      "rendered_width": 624,
+      "char_count": 23,
+      "text": "B@@@@@@@@@@@@@@@@@@@@B|"
+    },
+    {
+      "line_index": 44,
+      "score": 0.47015384527353143,
+      "distance": 0.5298461547264686,
+      "rendered_width": 624,
+      "char_count": 24,
+      "text": "@B@@&_T@@@@@@@@O@@@@@@@]"
+    },
+    {
+      "line_index": 45,
+      "score": 0.48182724773614116,
+      "distance": 0.5181727522638588,
+      "rendered_width": 623,
+      "char_count": 28,
+      "text": "B@@@#   .  %@@@@@@@@@@@@@@B&"
+    },
+    {
+      "line_index": 46,
+      "score": 0.5048559357048339,
+      "distance": 0.49514406429516605,
+      "rendered_width": 624,
+      "char_count": 34,
+      "text": "g@@@`     `     W@@@@@@@[-@@@@@@E$"
+    },
+    {
+      "line_index": 47,
+      "score": 0.5215052276355289,
+      "distance": 0.47849477236447113,
+      "rendered_width": 620,
+      "char_count": 37,
+      "text": "@@@`                 W@@@@@@@@@@@@@B#"
+    },
+    {
+      "line_index": 48,
+      "score": 0.5423607410888327,
+      "distance": 0.45763925891116736,
+      "rendered_width": 624,
+      "char_count": 44,
+      "text": "@@@                    @J_@@@@@@@@@@$^@[  ,|"
+    },
+    {
+      "line_index": 49,
+      "score": 0.5276358226485562,
+      "distance": 0.4723641773514438,
+      "rendered_width": 624,
+      "char_count": 42,
+      "text": "8@@f                     W@@@@@@@@@@@$-WEg"
+    },
+    {
+      "line_index": 50,
+      "score": 0.5248430736284271,
+      "distance": 0.475156926371573,
+      "rendered_width": 624,
+      "char_count": 45,
+      "text": "-@-@                     ` @@@@@@@@@@@@{__$g|"
+    },
+    {
+      "line_index": 51,
+      "score": 0.5528604018742143,
+      "distance": 0.44713959812578574,
+      "rendered_width": 623,
+      "char_count": 42,
+      "text": "a@@'                     . @@@@@@@@WM@@@@@"
+    },
+    {
+      "line_index": 52,
+      "score": 0.5925128633440171,
+      "distance": 0.40748713665598296,
+      "rendered_width": 624,
+      "char_count": 56,
+      "text": "g@@                 - _   @@@@@@@[__               @@@||"
+    },
+    {
+      "line_index": 53,
+      "score": 0.5669668542493702,
+      "distance": 0.4330331457506298,
+      "rendered_width": 624,
+      "char_count": 43,
+      "text": "@@|[                  %.   W@@@P@@@@@@_@@M{"
+    },
+    {
+      "line_index": 54,
+      "score": 0.5543600109547691,
+      "distance": 0.4456399890452309,
+      "rendered_width": 624,
+      "char_count": 39,
+      "text": "@@[    _            @_.Q@@@_a@@@@@@@@@|"
+    },
+    {
+      "line_index": 55,
+      "score": 0.5387401010835513,
+      "distance": 0.46125989891644875,
+      "rendered_width": 624,
+      "char_count": 43,
+      "text": "@@]   ,,..            @;`, @@@$_@@@@@@@@@X|"
+    },
+    {
+      "line_index": 56,
+      "score": 0.5278040211125197,
+      "distance": 0.4721959788874803,
+      "rendered_width": 624,
+      "char_count": 37,
+      "text": "@@|.#-              @_@@@@@@@@@@@@@Eg"
+    },
+    {
+      "line_index": 57,
+      "score": 0.5149694660490275,
+      "distance": 0.4850305339509725,
+      "rendered_width": 624,
+      "char_count": 39,
+      "text": "B@# `)\".              @@@@@@@@@@@@@E@H)"
+    },
+    {
+      "line_index": 58,
+      "score": 0.49909410028975476,
+      "distance": 0.5009058997102452,
+      "rendered_width": 622,
+      "char_count": 36,
+      "text": "@9@g\"              @$@@@@@@@@@@@@@Fg"
+    },
+    {
+      "line_index": 59,
+      "score": 0.4991478842667685,
+      "distance": 0.5008521157332315,
+      "rendered_width": 623,
+      "char_count": 34,
+      "text": "@M@F             .@@@@@B@@@@@@@@@@"
+    },
+    {
+      "line_index": 60,
+      "score": 0.5013583823027115,
+      "distance": 0.49864161769728854,
+      "rendered_width": 624,
+      "char_count": 35,
+      "text": "M@@F             _@@@@@@@@@@@@@}@T{"
+    },
+    {
+      "line_index": 61,
+      "score": 0.5082028395809559,
+      "distance": 0.4917971604190441,
+      "rendered_width": 624,
+      "char_count": 35,
+      "text": "@M@E              %@@@@ET@@@@@@@@E%"
+    },
+    {
+      "line_index": 62,
+      "score": 0.5104000294190547,
+      "distance": 0.48959997058094534,
+      "rendered_width": 624,
+      "char_count": 36,
+      "text": "E@@&               @@@@@@@@@@@@@@E*#"
+    },
+    {
+      "line_index": 63,
+      "score": 0.513171331015827,
+      "distance": 0.48682866898417293,
+      "rendered_width": 624,
+      "char_count": 36,
+      "text": "@@@[ .            .@@@@@@@@@@@@@$__%"
+    },
+    {
+      "line_index": 64,
+      "score": 0.5163637080523403,
+      "distance": 0.48363629194765967,
+      "rendered_width": 624,
+      "char_count": 38,
+      "text": "@@@}           .   Q@@@@@@@@@@@@$_*%;|"
+    },
+    {
+      "line_index": 65,
+      "score": 0.521390439158651,
+      "distance": 0.4786095608413489,
+      "rendered_width": 612,
+      "char_count": 35,
+      "text": "@@@{             . @@@B@@@@@@@@@@T%"
+    },
+    {
+      "line_index": 66,
+      "score": 0.49125113710199186,
+      "distance": 0.5087488628980081,
+      "rendered_width": 624,
+      "char_count": 25,
+      "text": "E@@@____@@@@@@@@@@@@@t@@|"
+    },
+    {
+      "line_index": 67,
+      "score": 0.4712198262480769,
+      "distance": 0.5287801737519231,
+      "rendered_width": 621,
+      "char_count": 23,
+      "text": "@%@@@@@@@@@@@@@@@@@@@f|"
+    },
+    {
+      "line_index": 68,
+      "score": 0.48200173786143197,
+      "distance": 0.517998262138568,
+      "rendered_width": 623,
+      "char_count": 24,
+      "text": "@F@@@@@@@@&@@@@@@@@R@#F{"
+    },
+    {
+      "line_index": 69,
+      "score": 0.486673019590421,
+      "distance": 0.513326980409579,
+      "rendered_width": 624,
+      "char_count": 27,
+      "text": "@M@@@@@@@@@@@@@@@T@@f{I_;;,"
+    },
+    {
+      "line_index": 70,
+      "score": 0.4959220601692459,
+      "distance": 0.5040779398307541,
+      "rendered_width": 623,
+      "char_count": 26,
+      "text": "@%@@@@@@@@M@@@@@@@%F%{{)\";"
+    },
+    {
+      "line_index": 71,
+      "score": 0.5065962060004877,
+      "distance": 0.4934037939995123,
+      "rendered_width": 621,
+      "char_count": 24,
+      "text": "%w@@@@@@@@@@@@@@@@@@@f;/"
+    },
+    {
+      "line_index": 72,
+      "score": 0.5025302734490074,
+      "distance": 0.49746972655099264,
+      "rendered_width": 624,
+      "char_count": 25,
+      "text": "V%@@@@@@@@@@@@@@@@@F@F*;|"
+    },
+    {
+      "line_index": 73,
+      "score": 0.4985183182525059,
+      "distance": 0.5014816817474941,
+      "rendered_width": 623,
+      "char_count": 24,
+      "text": "F@@@@@@@@@@@@@@@@@@@@*;\""
+    },
+    {
+      "line_index": 74,
+      "score": 0.49560358225849777,
+      "distance": 0.5043964177415022,
+      "rendered_width": 624,
+      "char_count": 25,
+      "text": "%%@@@@@@@@@@@@@@@@@@{f\";_"
+    },
+    {
+      "line_index": 75,
+      "score": 0.4914199050914828,
+      "distance": 0.5085800949085172,
+      "rendered_width": 621,
+      "char_count": 27,
+      "text": "%%%@@@@@@@@@@@@@@#@@f{;_;-."
+    },
+    {
+      "line_index": 76,
+      "score": 0.4926960453908008,
+      "distance": 0.5073039546091992,
+      "rendered_width": 624,
+      "char_count": 30,
+      "text": "%F%@@@@@@@@@@@@@@(F%F{;;_F\\;;;"
+    },
+    {
+      "line_index": 77,
+      "score": 0.49346959725764006,
+      "distance": 0.5065304027423599,
+      "rendered_width": 622,
+      "char_count": 28,
+      "text": "_V@@@@@@@@@@@@@F@TF%%_**^\\`\""
+    },
+    {
+      "line_index": 78,
+      "score": 0.49757323158992006,
+      "distance": 0.5024267684100799,
+      "rendered_width": 623,
+      "char_count": 38,
+      "text": "%@@@@@@@@@@@@@F%f;\";.F ;{;\"};;-;_`\";;;"
+    },
+    {
+      "line_index": 79,
+      "score": 0.5135778150946846,
+      "distance": 0.4864221849053154,
+      "rendered_width": 619,
+      "char_count": 39,
+      "text": "%@@@@@@@@@@@@@F'a;;;;;;;,-\"\"\"\"\"f_\" ;_.;"
+    },
+    {
+      "line_index": 80,
+      "score": 0.5266476621904703,
+      "distance": 0.4733523378095296,
+      "rendered_width": 623,
+      "char_count": 42,
+      "text": "@@@@@@@@@@@@@FF;;_\";;  ;`;;; _._;;;;_\",; \\"
+    },
+    {
+      "line_index": 81,
+      "score": 0.5329754878043409,
+      "distance": 0.4670245121956591,
+      "rendered_width": 623,
+      "char_count": 40,
+      "text": "@@@@@@@@@@@@@FF*,;;\"\";`,;; ___;\\\"~`.;;;;"
+    },
+    {
+      "line_index": 82,
+      "score": 0.5387304825300905,
+      "distance": 0.4612695174699096,
+      "rendered_width": 624,
+      "char_count": 39,
+      "text": "@@@@@@@@@@@@@|F\\;;\"\\;__; \"\".;;;_;\\__.\\*"
+    },
+    {
+      "line_index": 83,
+      "score": 0.5495776439684009,
+      "distance": 0.4504223560315991,
+      "rendered_width": 623,
+      "char_count": 44,
+      "text": "@#@@@@@@@@@@@||{;\"\\;;_;,\"-;;;;. /;\"\";_T{;{\"\""
+    },
+    {
+      "line_index": 84,
+      "score": 0.5562710731457441,
+      "distance": 0.44372892685425586,
+      "rendered_width": 622,
+      "char_count": 40,
+      "text": "%@@@@@@@@@@@F;F_\\{;;.;;;;;_\"_ _;\"_\"{F),,"
+    },
+    {
+      "line_index": 85,
+      "score": 0.5680111980186509,
+      "distance": 0.43198880198134915,
+      "rendered_width": 624,
+      "char_count": 41,
+      "text": "F@@@@@@@@@@FWT\\;{;\"_\"{_;;_;_,;,-F;\"    T*"
+    },
+    {
+      "line_index": 86,
+      "score": 0.5791888508501815,
+      "distance": 0.4208111491498185,
+      "rendered_width": 614,
+      "char_count": 40,
+      "text": "@a@@@@@@@@@@{}{f;;{\"_.;/\"_{_;;;;;_T_ _,/"
+    },
+    {
+      "line_index": 87,
+      "score": 0.5949888036981068,
+      "distance": 0.40501119630189325,
+      "rendered_width": 609,
+      "char_count": 48,
+      "text": "F%@@@@M`\"1@@@@Jf;;;;;__;\";; ;   \";\";;_\"_;}  ~{|,"
+    },
+    {
+      "line_index": 88,
+      "score": 0.5976974509240636,
+      "distance": 0.4023025490759365,
+      "rendered_width": 624,
+      "char_count": 48,
+      "text": "W@@T@@$ - @R@@#%;`;;._;. \";`;_;_;\",_;{T\\    _};\\"
+    },
+    {
+      "line_index": 89,
+      "score": 0.6046627875456803,
+      "distance": 0.39533721245431974,
+      "rendered_width": 623,
+      "char_count": 45,
+      "text": "%@@@@@' _@#@{{fa{;\\_`;;.`__,-,_ ,_\\ TT\"\"__|,;"
+    },
+    {
+      "line_index": 90,
+      "score": 0.6104113185387752,
+      "distance": 0.3895886814612249,
+      "rendered_width": 624,
+      "char_count": 49,
+      "text": "%%@@@TFw%@F{T;; ;\"_\"\"-,;,\"\" ;*_-^ ;;,*;_f_\"`\"@  \""
+    },
+    {
+      "line_index": 91,
+      "score": 0.6111872823709457,
+      "distance": 0.3888127176290544,
+      "rendered_width": 624,
+      "char_count": 50,
+      "text": "V%%%@@_%%F%{{;;.\"` ;_\".; .  ;,;'.__;;\"',;_;_ _%@a'"
+    },
+    {
+      "line_index": 92,
+      "score": 0.6224028240681414,
+      "distance": 0.3775971759318586,
+      "rendered_width": 601,
+      "char_count": 58,
+      "text": "TF{_{fT @%,%F{_)~_\";;  ,_ *;--, .v _,;* ;;; ;;,;-;I_.  \"%f"
+    },
+    {
+      "line_index": 93,
+      "score": 0.6206566381238705,
+      "distance": 0.37934336187612955,
+      "rendered_width": 624,
+      "char_count": 60,
+      "text": "*%F%|}T\"*T.\"_\"\"{;/*\"\\;;\\,_;\\\\_;\\.;,;_;_;;T; ;_;;T@    ,T\\)_'"
+    },
+    {
+      "line_index": 94,
+      "score": 0.627870584055669,
+      "distance": 0.372129415944331,
+      "rendered_width": 624,
+      "char_count": 59,
+      "text": "*;F;\"\"\",fF_\",__-___};F{_{_)\\; ;\"{,*I_\";,;;;.; _;\"_\"_-   T%#"
+    },
+    {
+      "line_index": 95,
+      "score": 0.6371094510745858,
+      "distance": 0.36289054892541417,
+      "rendered_width": 622,
+      "char_count": 68,
+      "text": ";_*;\" ,-_\" .a_,\"\"~_;;;;; _;;;\"  \";  .;. \"\";\"\";;\\*;_\"_\\. ,`;_F\";_a  T"
+    },
+    {
+      "line_index": 96,
+      "score": 0.639550263166068,
+      "distance": 0.360449736833932,
+      "rendered_width": 614,
+      "char_count": 69,
+      "text": "_*;_,; _; _/_;/;;-\"-;_\" ;;\"\";.  ;;;; . ;  .\"   _;,-._),;_,_z%%q{   \"\\"
+    },
+    {
+      "line_index": 97,
+      "score": 0.6347447853102763,
+      "distance": 0.36525521468972366,
+      "rendered_width": 621,
+      "char_count": 69,
+      "text": ";;); ;\";_;_{_f*\"{;_/ ,_-*;;;,;,.\"\"; ;;;,;;\"_/;; T_/\"  ;  -T_#%{\\   T|"
+    },
+    {
+      "line_index": 98,
+      "score": 0.6572439010686284,
+      "distance": 0.34275609893137154,
+      "rendered_width": 624,
+      "char_count": 81,
+      "text": ".\"   \"_--   , \".'..    ;;, *;, -\";.\";`\", \"/\"\"__,_ .,*,. '  _\";\". ;\\FT,\"     T,  T"
+    },
+    {
+      "line_index": 99,
+      "score": 0.6626715469504194,
+      "distance": 0.3373284530495806,
+      "rendered_width": 624,
+      "char_count": 93,
+      "text": "       \"; ;\",.;,... , , \"\"-   -         ;       *;,`.\" ;,-;   \";,~ _;, ,_-._;/F;.       `,_;|"
+    },
+    {
+      "line_index": 100,
+      "score": 0.6585429592190105,
+      "distance": 0.3414570407809895,
+      "rendered_width": 623,
+      "char_count": 87,
+      "text": "_ ,,     ,;-,\",,, _.  \",; ;. .             ` ;        ;. \" ,,`;-;,_\\;I__;/%Fa)      %|`"
+    },
+    {
+      "line_index": 101,
+      "score": 0.6621987246999554,
+      "distance": 0.3378012753000446,
+      "rendered_width": 621,
+      "char_count": 84,
+      "text": ";_\"   .;`\"-\";. -;).,,;  .; . ,            ; ;     `       ,..   . \";``_ty-%%;%{_.Tf`"
+    },
+    {
+      "line_index": 102,
+      "score": 0.658610242074791,
+      "distance": 0.34138975792520904,
+      "rendered_width": 616,
+      "char_count": 70,
+      "text": "*\" _\"{/\\/,;;,  ;_.;  `; ..   _  ,.. \";\"   . ,  ;     _ \\_\";%'\"V_%%@Jf/"
+    },
+    {
+      "line_index": 103,
+      "score": 0.6613667640570962,
+      "distance": 0.33863323594290384,
+      "rendered_width": 599,
+      "char_count": 80,
+      "text": " .._; \"f   ,;,    ;.,; ;-   . \".   ;_}  \" ;.;             ``   ,-;..; \\_ _w%@_Ff"
+    },
+    {
+      "line_index": 104,
+      "score": 0.6615800639083482,
+      "distance": 0.3384199360916517,
+      "rendered_width": 610,
+      "char_count": 78,
+      "text": "  \"._; ;;,;`;;_ ;\";, .,\";;   \"- ;, \"\" ;;-            . ;     \"\\.___{{-\"T{_#%]|"
+    },
+    {
+      "line_index": 105,
+      "score": 0.6434492820348495,
+      "distance": 0.3565507179651505,
+      "rendered_width": 623,
+      "char_count": 71,
+      "text": "__ \\;\"\\;--_;;,;._;;`;.  _;\"\" _\";    ;   . .         ;\" \";_~@__MF{@I,  ,"
+    },
+    {
+      "line_index": 106,
+      "score": 0.6364384761942637,
+      "distance": 0.36356152380573625,
+      "rendered_width": 623,
+      "char_count": 70,
+      "text": "_.;.;_/fT_`;T;\"* ;\";_ ;/ .    ;  .    ,.  .;     -. ., ;   ;; ,@F%%%@@"
+    },
+    {
+      "line_index": 107,
+      "score": 0.6412896095897278,
+      "distance": 0.35871039041027225,
+      "rendered_width": 624,
+      "char_count": 69,
+      "text": "_- ,_..f;\\,*\"\\\"\";; `;-\\ \" ;\"_;- .   .   -,_ .  ,   ; ,;-_ _;T/_%T%F@|"
+    },
+    {
+      "line_index": 108,
+      "score": 0.6460398155100205,
+      "distance": 0.35396018448997946,
+      "rendered_width": 624,
+      "char_count": 81,
+      "text": "_;_ -/;\"-,,; ;`;/ .;;\\,,  \\;;;;;. -,,..   -; ;        \\_  ; ;;. _;, ; ;,;_F)T%;%9"
+    },
+    {
+      "line_index": 109,
+      "score": 0.6546860845200437,
+      "distance": 0.3453139154799563,
+      "rendered_width": 624,
+      "char_count": 84,
+      "text": "_    \"\"'-,;; -;.\"_\" ;;,`_;.,  .\" {;.'  T-  - .\"         , `     ,;;.,_;-\\,,,\";_3__/|"
+    }
+  ],
+  "glyphs": [
+    {
+      "char": " ",
+      "width": 5,
+      "height": 34,
+      "path": null,
+      "synthetic": true
+    },
+    {
+      "char": "a",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.46.19\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "b",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.46.23\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "c",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.08\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "d",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.10\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "e",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.28\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "f",
+      "width": 10,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.32\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "g",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.35\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "h",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.38\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "i",
+      "width": 5,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.42\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "j",
+      "width": 5,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.46\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "k",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.49\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "l",
+      "width": 5,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.53\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "m",
+      "width": 23,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.50.56\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "n",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.00\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "o",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.04\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "p",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.07\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "q",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.10\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "r",
+      "width": 11,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.15\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "s",
+      "width": 14,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.17\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "t",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.20\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "u",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.23\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "v",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.26\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "w",
+      "width": 21,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.29\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "x",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.33\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "y",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.36\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "z",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.40\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "A",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.44\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "B",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.47\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "C",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.51\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "D",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.55\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "E",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.51.59\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "F",
+      "width": 17,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.03\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "G",
+      "width": 22,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.07\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "H",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.09\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "I",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.13\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "J",
+      "width": 13,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.16\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "K",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.21\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "L",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.35\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "M",
+      "width": 23,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.39\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "N",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.42\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "O",
+      "width": 22,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.46\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "P",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.49\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "Q",
+      "width": 22,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.52\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "R",
+      "width": 21,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.52.56\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "S",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.00\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "T",
+      "width": 18,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.04\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "U",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.07\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "V",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.10\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "W",
+      "width": 28,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.13\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "X",
+      "width": 20,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.25\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "Y",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.28\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "Z",
+      "width": 18,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.32\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "1",
+      "width": 12,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.54\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "2",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.53.57\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "3",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.00\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "4",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.04\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "5",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.08\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "6",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.11\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "7",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.14\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "8",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.18\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "9",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.21\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "0",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.24\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "!",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.28\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "@",
+      "width": 29,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.35\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "#",
+      "width": 17,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.54.41\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "$",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.07\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "%",
+      "width": 25,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.12\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "^",
+      "width": 13,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.16\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "&",
+      "width": 19,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.21\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "*",
+      "width": 11,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.24\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "(",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.28\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": ")",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.32\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "-",
+      "width": 10,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.38\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "_",
+      "width": 17,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.43\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "+",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.53\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "=",
+      "width": 16,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.55.56\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "{",
+      "width": 10,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.01\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "}",
+      "width": 10,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.05\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "[",
+      "width": 8,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.09\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "]",
+      "width": 7,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.12\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "|",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.16\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "\\",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.20\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": ";",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.30\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "\"",
+      "width": 9,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.33\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "'",
+      "width": 5,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.38\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "?",
+      "width": 15,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.43\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "/",
+      "width": 8,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.47\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": ".",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.50\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": ",",
+      "width": 6,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.56.55\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "~",
+      "width": 17,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.57.05\u202fPM.png",
+      "synthetic": false
+    },
+    {
+      "char": "`",
+      "width": 7,
+      "height": 34,
+      "path": "final_data/Screenshot 2026-05-24 at 5.57.09\u202fPM.png",
+      "synthetic": false
+    }
+  ]
+}
