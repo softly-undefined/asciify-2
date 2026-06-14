@@ -1,6 +1,15 @@
 # Asciify 2 Web
 
-Static frontend for Asciify 2. It can be hosted directly on GitHub Pages.
+Static frontend for Asciify 2. It supports the original monochrome renderer, a
+color-aware beam search, and a post-color mode that preserves the monochrome
+search's text exactly before fitting colors to its characters. Color modes copy
+rich colored text for pasting into Google Docs. It can be hosted directly on
+GitHub Pages.
+
+Deploy the complete contents of this directory together. The HTML uses
+versioned asset URLs so browsers and CDNs load matching copies of `app.js`,
+`worker.js`, and `styles.css`. Rich clipboard writes work automatically on
+HTTPS sites and localhost; other hosts use the browser's legacy copy fallback.
 
 ## Run locally
 

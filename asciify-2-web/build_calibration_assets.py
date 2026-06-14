@@ -15,6 +15,7 @@ SOURCE_ROOT = ROOT.parent / "calibration-models"
 OUTPUT_ROOT = ROOT / "calibration"
 FONT_SIZES = (1, 5, 8, 11, 15, 20)
 SIZE_ONE_LINE_WIDTH = 9019
+SIZE_ONE_SAFE_LINE_WIDTH = round(SIZE_ONE_LINE_WIDTH * 0.95)
 SIZE_ONE_ACTUAL_POINTS = 2.25
 
 
@@ -53,10 +54,14 @@ def build_font(font_size: int) -> None:
 
     packed = {
         "fontSize": font_size,
-        "lineWidth": round(
-            SIZE_ONE_LINE_WIDTH
-            * SIZE_ONE_ACTUAL_POINTS
-            / float(model["font"]["size_points"])
+        "lineWidth": (
+            SIZE_ONE_SAFE_LINE_WIDTH
+            if font_size == 1
+            else round(
+                SIZE_ONE_LINE_WIDTH
+                * SIZE_ONE_ACTUAL_POINTS
+                / float(model["font"]["size_points"])
+            )
         ),
         "glyphHeight": int(model["raster"]["height_pixels"]),
         "advances": advances,

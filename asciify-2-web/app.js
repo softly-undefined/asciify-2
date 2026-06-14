@@ -1,7 +1,10 @@
-const SIZE_ONE_LINE_WIDTH = 9019;
+const SIZE_ONE_LINE_WIDTH = 8568;
 const SIZE_ONE_ACTUAL_POINTS = 2.25;
 const GLYPH_HEIGHT = 58;
 const FOREGROUND_WEIGHT = 4;
+const PALETTE_LEVELS = 6;
+const ASSET_VERSION = "20260614-color-modes-1";
+const WORKER_PROTOCOL_VERSION = 3;
 const BEAM_WIDTHS = {
   1: 5,
   5: 10,
@@ -16,6 +19,7 @@ const imageInput = document.querySelector("#image-input");
 const dropZone = document.querySelector("#drop-zone");
 const fileLabel = document.querySelector("#file-label");
 const fontSizeSelect = document.querySelector("#font-size");
+const outputModeSelect = document.querySelector("#output-mode");
 const fontHint = document.querySelector("#font-hint");
 const convertButton = document.querySelector("#convert-button");
 const cancelButton = document.querySelector("#cancel-button");
@@ -35,6 +39,8 @@ let selectedFile = null;
 let previewUrl = null;
 let activeRun = null;
 let outputText = "";
+let outputHtml = "";
+let outputIsColor = false;
 const calibrationCache = new Map();
 
 const fontHints = {
@@ -84,10 +90,13 @@ form.addEventListener("submit", async (event) => {
   setError("");
   resultSection.hidden = true;
   outputText = "";
+  outputHtml = "";
+  outputIsColor = false;
   setBusy(true);
 
   const run = {
     cancelled: false,
+    outputMode: outputModeSelect.value,
     workers: [],
     startedAt: performance.now(),
   };
@@ -113,18 +122,27 @@ form.addEventListener("submit", async (event) => {
       source,
       numLines,
       beamWidth: BEAM_WIDTHS[fontSize],
+      outputMode: run.outputMode,
       run,
     });
     assertActive(run);
 
-    outputText = `${lines.join("\n")}\n`;
-    asciiOutput.textContent = outputText;
+    outputText = `${lines.map((line) => line.text).join("\n")}\n`;
+    outputIsColor = run.outputMode !== "monochrome";
+    if (outputIsColor) {
+      renderColoredOutput(lines);
+      outputHtml = buildRichHtml(lines, fontSize);
+    } else {
+      asciiOutput.textContent = outputText;
+    }
     asciiOutput.style.fontSize = fontSize === 1 ? "2.25pt" : `${fontSize}pt`;
+    copyButton.textContent = getCopyButtonLabel();
 
     const elapsed = (performance.now() - run.startedAt) / 1000;
-    const characters = lines.reduce((sum, line) => sum + line.length, 0);
+    const characters = lines.reduce((sum, line) => sum + line.text.length, 0);
+    const mode = getOutputModeLabel(run.outputMode);
     resultSummary.textContent =
-      `${numLines} lines, ${characters.toLocaleString()} characters, ` +
+      `${numLines} lines, ${characters.toLocaleString()} characters, ${mode}, ` +
       `${formatDuration(elapsed)}.`;
     resultSection.hidden = false;
     resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -164,10 +182,22 @@ copyButton.addEventListener("click", async () => {
   }
 
   try {
-    await navigator.clipboard.writeText(outputText);
+    if (outputIsColor) {
+      if (!window.ClipboardItem || !navigator.clipboard.write) {
+        throw new Error("Rich clipboard unavailable");
+      }
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          "text/html": new Blob([outputHtml], { type: "text/html" }),
+          "text/plain": new Blob([outputText], { type: "text/plain" }),
+        }),
+      ]);
+    } else {
+      await navigator.clipboard.writeText(outputText);
+    }
     copyButton.textContent = "Copied";
     window.setTimeout(() => {
-      copyButton.textContent = "Copy to clipboard";
+      copyButton.textContent = getCopyButtonLabel();
     }, 1800);
   } catch {
     const range = document.createRange();
@@ -175,7 +205,15 @@ copyButton.addEventListener("click", async () => {
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
-    copyButton.textContent = "Selected text";
+    if (document.execCommand?.("copy")) {
+      copyButton.textContent = "Copied";
+      selection.removeAllRanges();
+      window.setTimeout(() => {
+        copyButton.textContent = getCopyButtonLabel();
+      }, 1800);
+    } else {
+      copyButton.textContent = "Selected - press Ctrl/Cmd+C";
+    }
   }
 });
 
@@ -203,6 +241,7 @@ function setSelectedFile(file) {
 function setBusy(busy) {
   convertButton.disabled = busy || !selectedFile;
   fontSizeSelect.disabled = busy;
+  outputModeSelect.disabled = busy;
   imageInput.disabled = busy;
   cancelButton.hidden = !busy;
   progressShell.hidden = !busy && !statusText.textContent;
@@ -231,7 +270,8 @@ async function loadCalibration(fontSize) {
   if (calibrationCache.has(fontSize)) {
     return calibrationCache.get(fontSize);
   }
-  const response = await fetch(`calibration/${fontSize}.json`);
+  const calibrationUrl = new URL(`calibration/${fontSize}.json`, import.meta.url);
+  const response = await fetch(calibrationUrl);
   if (!response.ok) {
     throw new Error(`Could not load the size ${fontSize} calibration.`);
   }
@@ -254,7 +294,7 @@ async function loadSourceImage(file) {
   return { canvas, width: canvas.width, height: canvas.height };
 }
 
-async function convertImage({ calibration, source, numLines, beamWidth, run }) {
+async function convertImage({ calibration, source, numLines, beamWidth, outputMode, run }) {
   const workerCount = Math.min(
     numLines,
     8,
@@ -298,22 +338,42 @@ async function convertImage({ calibration, source, numLines, beamWidth, run }) {
         calibration.glyphHeight,
         lineIndex,
         numLines,
+        outputMode,
       );
       worker.postMessage({ type: "search", lineIndex, target }, [target.buffer]);
     };
 
     for (let index = 0; index < workerCount; index++) {
-      const worker = new Worker("worker.js");
+      const workerUrl = new URL(`worker.js?v=${ASSET_VERSION}`, import.meta.url);
+      const worker = new Worker(workerUrl);
       run.workers.push(worker);
 
       worker.addEventListener("message", (event) => {
         const message = event.data;
         if (message.type === "ready") {
+          if (message.protocolVersion !== WORKER_PROTOCOL_VERSION) {
+            reject(
+              new Error(
+                "The site loaded mismatched app and worker versions. Clear the site cache and redeploy all asciify-2-web files.",
+              ),
+            );
+            return;
+          }
           dispatch(worker);
           return;
         }
         if (message.type === "result") {
-          results[message.lineIndex] = message.text;
+          if (
+            outputMode !== "monochrome" &&
+            (!Array.isArray(message.colors) || message.colors.length !== message.text.length)
+          ) {
+            reject(createWorkerMismatchError());
+            return;
+          }
+          results[message.lineIndex] = {
+            text: message.text,
+            colors: message.colors,
+          };
           completed++;
           setStatus("Searching rows...", completed, numLines);
           dispatch(worker);
@@ -329,12 +389,15 @@ async function convertImage({ calibration, source, numLines, beamWidth, run }) {
         calibration,
         beamWidth,
         foregroundWeight: FOREGROUND_WEIGHT,
+        outputMode,
+        paletteLevels: PALETTE_LEVELS,
+        protocolVersion: WORKER_PROTOCOL_VERSION,
       });
     }
   });
 }
 
-function renderStrip(source, context, width, height, lineIndex, numLines) {
+function renderStrip(source, context, width, height, lineIndex, numLines, outputMode) {
   const top = Math.round((source.height * lineIndex) / numLines);
   let bottom = Math.round((source.height * (lineIndex + 1)) / numLines);
   if (bottom <= top) {
@@ -356,6 +419,16 @@ function renderStrip(source, context, width, height, lineIndex, numLines) {
   );
 
   const rgba = context.getImageData(0, 0, width, height).data;
+  if (outputMode !== "monochrome") {
+    const rgb = new Uint8Array(width * height * 3);
+    for (let sourceIndex = 0, targetIndex = 0; sourceIndex < rgba.length; sourceIndex += 4) {
+      rgb[targetIndex++] = rgba[sourceIndex];
+      rgb[targetIndex++] = rgba[sourceIndex + 1];
+      rgb[targetIndex++] = rgba[sourceIndex + 2];
+    }
+    return rgb;
+  }
+
   const gray = new Uint8Array(width * height);
   for (let sourceIndex = 0, targetIndex = 0; sourceIndex < rgba.length; sourceIndex += 4) {
     gray[targetIndex++] = Math.round(
@@ -365,6 +438,72 @@ function renderStrip(source, context, width, height, lineIndex, numLines) {
     );
   }
   return gray;
+}
+
+function renderColoredOutput(lines) {
+  asciiOutput.replaceChildren();
+  lines.forEach((line, lineIndex) => {
+    for (let index = 0; index < line.text.length; index++) {
+      if (!line.colors?.[index]) {
+        throw createWorkerMismatchError();
+      }
+      const span = document.createElement("span");
+      span.textContent = line.text[index];
+      span.style.color = `rgb(${line.colors[index].join(",")})`;
+      asciiOutput.append(span);
+    }
+    if (lineIndex < lines.length - 1) {
+      asciiOutput.append("\n");
+    }
+  });
+}
+
+function buildRichHtml(lines, fontSize) {
+  const actualFontSize = fontSize === 1 ? SIZE_ONE_ACTUAL_POINTS : fontSize;
+  const content = lines
+    .map((line) => {
+      if (!line.colors || line.colors.length !== line.text.length) {
+        throw createWorkerMismatchError();
+      }
+      return [...line.text]
+          .map((char, index) => {
+            const color = line.colors[index].join(",");
+            return `<span style="color:rgb(${color})">${escapeHtml(char)}</span>`;
+          })
+          .join("");
+    })
+    .join("\n");
+  return (
+    `<pre style="margin:0;background:#fff;color:#000;font-family:Arial,sans-serif;` +
+    `font-size:${actualFontSize}pt;line-height:normal;white-space:pre">${content}</pre>`
+  );
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function getCopyButtonLabel() {
+  return outputIsColor ? "Copy colors to clipboard" : "Copy to clipboard";
+}
+
+function getOutputModeLabel(outputMode) {
+  if (outputMode === "color-search") {
+    return "color-aware search";
+  }
+  if (outputMode === "post-color") {
+    return "color after monochrome search";
+  }
+  return "monochrome";
+}
+
+function createWorkerMismatchError() {
+  return new Error(
+    "The site loaded an older worker.js. Upload the updated worker.js, app.js, and index.html together, then hard-refresh the page.",
+  );
 }
 
 function terminateWorkers(run) {

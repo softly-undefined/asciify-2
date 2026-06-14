@@ -54,6 +54,19 @@ python3 asciify_mk2.py input/example.png \
 
 This requires `ffmpeg`.
 
+## Color Output
+
+Use the color renderer to include a limited RGB palette in the beam search:
+
+```bash
+python3 asciify_mk2_color.py input/example.png --font-size 11
+```
+
+It writes plain text, a JSON report, and a rich HTML file under
+`output/example/`. Open the HTML file, select the colored ASCII art, and copy
+it into Google Docs. The `asciify-2-web/` app provides color output as a toggle
+and copies the same kind of rich colored text directly to the clipboard.
+
 ## How It Works
 
 1. Google Docs calibration PDFs provide exact Arial glyph shapes, widths, line

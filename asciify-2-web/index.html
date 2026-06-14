@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asciify 2</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260614-color-modes-1">
 </head>
 <body>
   <main>
@@ -43,6 +43,15 @@
               <option value="11" selected>11 (recommended)</option>
               <option value="15">15</option>
               <option value="20">20 (fastest)</option>
+            </select>
+          </label>
+
+          <label for="output-mode">
+            Output mode
+            <select id="output-mode" name="output-mode">
+              <option value="monochrome">Monochrome</option>
+              <option value="color-search">Color-aware search</option>
+              <option value="post-color">Color after monochrome search</option>
             </select>
           </label>
 
@@ -88,6 +97,6 @@
     </section>
   </main>
 
-  <script type="module" src="app.js"></script>
+  <script type="module" src="app.js?v=20260614-color-modes-1"></script>
 </body>
 </html>

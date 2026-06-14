@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import html
 import json
 import math
 import random
@@ -57,6 +58,7 @@ class BeamState:
     text: str
     width: float
     error_sum: float
+    colors: tuple[tuple[int, int, int], ...] = ()
 
 
 @dataclass(frozen=True)
@@ -67,6 +69,7 @@ class LineResult:
     distance: float
     rendered_width: int
     char_count: int
+    colors: tuple[tuple[int, int, int], ...] = ()
 
     def to_json(self) -> dict[str, Any]:
         return {
@@ -76,6 +79,7 @@ class LineResult:
             "rendered_width": self.rendered_width,
             "char_count": self.char_count,
             "text": self.text,
+            "colors": [list(color) for color in self.colors],
         }
 
 
@@ -120,6 +124,17 @@ def load_image_array(path: Path) -> np.ndarray:
         return image_to_array(image)
 
 
+def load_color_image_array(path: Path) -> np.ndarray:
+    with Image.open(path) as image:
+        image = ImageOps.exif_transpose(image)
+        if "A" in image.getbands():
+            rgba = image.convert("RGBA")
+            background = Image.new("RGBA", rgba.size, (255, 255, 255, 255))
+            background.alpha_composite(rgba)
+            image = background
+        return np.asarray(image.convert("RGB"), dtype=np.float32) / 255.0
+
+
 def vertically_squish_source(source: np.ndarray, factor: float) -> np.ndarray:
     """Compress source content vertically and center it on its original canvas."""
     if not 0.0 < factor <= 1.0:
@@ -127,7 +142,7 @@ def vertically_squish_source(source: np.ndarray, factor: float) -> np.ndarray:
     if factor == 1.0:
         return source
 
-    height, width = source.shape
+    height, width = source.shape[:2]
     squished_height = max(1, int(round(height * factor)))
     image = Image.fromarray(np.clip(source * 255.0, 0, 255).astype(np.uint8))
     squished = image.resize((width, squished_height), Image.Resampling.LANCZOS)
@@ -295,7 +310,7 @@ def calibrated_line_width(layout_model_path: Path) -> int:
 
 def default_output_paths(input_path: Path, font_size: int | None) -> tuple[Path, Path]:
     output_dir = Path("output") / input_path.stem
-    name = f"font_{font_size}" if font_size is not None else "ascii"
+    name = f"font_{font_size}_color" if font_size is not None else "ascii_color"
     return output_dir / f"{name}.txt", output_dir / f"{name}_report.json"
 
 
@@ -308,7 +323,7 @@ def split_into_strips(
     if num_lines <= 0:
         raise ValueError("num_lines must be positive.")
 
-    height, width = source.shape
+    height, width = source.shape[:2]
     edges = np.linspace(0, height, num_lines + 1)
     strips: list[np.ndarray] = []
 
@@ -340,14 +355,19 @@ def candidate_num_lines(min_lines: int, max_lines: int, step: int) -> list[int]:
 def target_error_weights(target: np.ndarray, foreground_weight: float) -> np.ndarray:
     if foreground_weight < 0:
         raise ValueError("--foreground-weight must be non-negative.")
-    return 1.0 + (foreground_weight * (1.0 - target))
+    luminance = (
+        0.299 * target[:, :, 0]
+        + 0.587 * target[:, :, 1]
+        + 0.114 * target[:, :, 2]
+    )
+    return 1.0 + (foreground_weight * (1.0 - luminance))
 
 
 def trailing_white_suffix_error(
     target: np.ndarray,
     error_weights: np.ndarray,
 ) -> np.ndarray:
-    column_errors = (np.abs(1.0 - target) * error_weights).sum(axis=0)
+    column_errors = (((1.0 - target) ** 2) * error_weights[:, :, None]).sum(axis=(0, 2))
     suffix = np.zeros(target.shape[1] + 1, dtype=np.float64)
     suffix[:-1] = np.cumsum(column_errors[::-1])[::-1]
     return suffix
@@ -362,13 +382,14 @@ def glyph_segment(glyph: Glyph, width: int) -> np.ndarray:
 
 def render_text_line(
     text: str,
+    colors: tuple[tuple[int, int, int], ...],
     glyphs_by_char: dict[str, Glyph],
     line_width: int,
     advances: dict[str, float] | None = None,
     pair_advances: dict[str, float] | None = None,
 ) -> np.ndarray:
     glyph_height = next(iter(glyphs_by_char.values())).height
-    rendered = np.ones((glyph_height, line_width), dtype=np.float32)
+    rendered = np.ones((glyph_height, line_width, 3), dtype=np.float32)
     cursor = 0.0
     advances = advances or {}
     pair_advances = pair_advances or {}
@@ -385,7 +406,9 @@ def render_text_line(
         end = min(round(cursor + advance), line_width)
         usable = end - start
         if usable > 0:
-            rendered[:, start:end] = glyph_segment(glyph, usable)
+            alpha = 1.0 - glyph_segment(glyph, usable)
+            color = np.asarray(colors[index], dtype=np.float32) / 255.0
+            rendered[:, start:end] = 1.0 - alpha[:, :, None] * (1.0 - color)
         cursor += advance
         if cursor >= line_width:
             break
@@ -402,8 +425,9 @@ def beam_search_strip(
     advances: dict[str, float] | None = None,
     pair_advances: dict[str, float] | None = None,
     progress_callback: Callable[[LineResult], None] | None = None,
+    palette_levels: int = 6,
 ) -> LineResult:
-    glyph_height, line_width = target.shape
+    glyph_height, line_width = target.shape[:2]
     if beam_width <= 0:
         raise ValueError("beam_width must be positive.")
     if any(glyph.height != glyph_height for glyph in glyphs):
@@ -417,13 +441,20 @@ def beam_search_strip(
 
     error_weights = target_error_weights(target, foreground_weight)
     white_suffix_error = trailing_white_suffix_error(target, error_weights)
-    total_weight = float(error_weights.sum())
+    total_weight = float(error_weights.sum()) * 3.0
     advances = advances or {}
     pair_advances = pair_advances or {}
     glyph_index_by_char = {glyph.char: index for index, glyph in enumerate(glyphs)}
-    segment_error_cache: dict[tuple[int, int, int], float] = {}
+    if not 2 <= palette_levels <= 16:
+        raise ValueError("--palette-levels must be between 2 and 16.")
+    palette_values = np.linspace(0.0, 1.0, palette_levels)
+    segment_error_cache: dict[
+        tuple[int, int, int], tuple[float, tuple[int, int, int]]
+    ] = {}
 
-    def segment_error(glyph_index: int, x: int, width: int) -> float:
+    def segment_evaluation(
+        glyph_index: int, x: int, width: int
+    ) -> tuple[float, tuple[int, int, int]]:
         key = (glyph_index, x, width)
         cached = segment_error_cache.get(key)
         if cached is not None:
@@ -431,14 +462,28 @@ def beam_search_strip(
 
         glyph = glyphs[glyph_index]
         end = x + width
+        alpha = 1.0 - glyph_segment(glyph, width)
+        weights = error_weights[:, x:end]
+        denominator = float(((alpha ** 2) * weights).sum())
+        if denominator > 1e-12:
+            desired = target[:, x:end] - (1.0 - alpha[:, :, None])
+            numerator = (
+                alpha[:, :, None] * desired * weights[:, :, None]
+            ).sum(axis=(0, 1))
+            ideal = np.clip(numerator / denominator, 0.0, 1.0)
+            snapped = palette_values[
+                np.abs(palette_values[:, None] - ideal[None, :]).argmin(axis=0)
+            ]
+        else:
+            snapped = np.zeros(3, dtype=np.float32)
+        rendered = 1.0 - alpha[:, :, None] * (1.0 - snapped)
         err = float(
-            (
-                np.abs(target[:, x:end] - glyph_segment(glyph, width))
-                * error_weights[:, x:end]
-            ).sum()
+            (((target[:, x:end] - rendered) ** 2) * weights[:, :, None]).sum()
         )
-        segment_error_cache[key] = err
-        return err
+        color = tuple(int(round(value * 255.0)) for value in snapped)
+        result = (err, color)
+        segment_error_cache[key] = result
+        return result
 
     def final_distance(state: BeamState) -> float:
         if not state.text:
@@ -449,7 +494,8 @@ def beam_search_strip(
         end = round(state.width + advances.get(glyph.char, glyph.width))
         if end > line_width:
             return math.inf
-        error = state.error_sum + segment_error(glyph_index, start, end - start)
+        error, _ = segment_evaluation(glyph_index, start, end - start)
+        error += state.error_sum
         return (error + white_suffix_error[end]) / total_weight
 
     beam = [BeamState(text="", width=0.0, error_sum=0.0)]
@@ -458,6 +504,14 @@ def beam_search_strip(
 
     def result_from_state(state: BeamState, distance: float) -> LineResult:
         text = state.text.rstrip()
+        colors = state.colors
+        if state.text:
+            glyph_index = glyph_index_by_char[state.text[-1]]
+            glyph = glyphs[glyph_index]
+            start = round(state.width)
+            end = round(state.width + advances.get(glyph.char, glyph.width))
+            _, final_color = segment_evaluation(glyph_index, start, end - start)
+            colors = state.colors + (final_color,)
         return LineResult(
             line_index=line_index,
             text=text,
@@ -475,6 +529,7 @@ def beam_search_strip(
                 else 0
             ),
             char_count=len(text),
+            colors=colors[: len(text)],
         )
 
     for _ in range(max_chars):
@@ -497,12 +552,15 @@ def beam_search_strip(
                     continue
                 start = round(state.width)
                 end = round(new_width)
+                segment_error, segment_color = segment_evaluation(
+                    previous_glyph_index, start, end - start
+                )
                 expanded.append(
                     BeamState(
                         text=state.text + glyph.char,
                         width=new_width,
-                        error_sum=state.error_sum
-                        + segment_error(previous_glyph_index, start, end - start),
+                        error_sum=state.error_sum + segment_error,
+                        colors=state.colors + (segment_color,),
                     )
                 )
 
@@ -536,6 +594,7 @@ def visualize_concurrent_search(
     fps: int,
     video_width: int,
     quiet: bool,
+    palette_levels: int,
 ) -> list[LineResult]:
     if workers <= 0:
         raise ValueError("--workers must be positive.")
@@ -547,8 +606,8 @@ def visualize_concurrent_search(
         raise RuntimeError("--visualize-progress requires ffmpeg on PATH.")
 
     glyphs_by_char = {glyph.char: glyph for glyph in glyphs}
-    glyph_height, line_width = strips[0].shape
-    canvas = np.ones((glyph_height * len(strips), line_width), dtype=np.float32)
+    glyph_height, line_width = strips[0].shape[:2]
+    canvas = np.ones((glyph_height * len(strips), line_width, 3), dtype=np.float32)
     latest: dict[int, LineResult] = {}
     changed: set[int] = set()
     lock = threading.Lock()
@@ -623,6 +682,7 @@ def visualize_concurrent_search(
                     advances=advances,
                     pair_advances=pair_advances,
                     progress_callback=publish,
+                    palette_levels=palette_levels,
                 )
             )
 
@@ -638,6 +698,7 @@ def visualize_concurrent_search(
                 top = line_index * glyph_height
                 canvas[top : top + glyph_height] = render_text_line(
                     result.text,
+                    result.colors,
                     glyphs_by_char,
                     line_width,
                     advances,
@@ -652,6 +713,7 @@ def visualize_concurrent_search(
         top = result.line_index * glyph_height
         canvas[top : top + glyph_height] = render_text_line(
             result.text,
+            result.colors,
             glyphs_by_char,
             line_width,
             advances,
@@ -729,6 +791,37 @@ def sample_line_indices(
     return sorted(indices)
 
 
+def rich_html(line_results: list[LineResult], font_size: float) -> str:
+    lines = []
+    for result in line_results:
+        spans = []
+        run = ""
+        previous_color = None
+        for char, color in zip(result.text, result.colors):
+            if previous_color is not None and color != previous_color:
+                spans.append(
+                    f'<span style="color:rgb({previous_color[0]},{previous_color[1]},'
+                    f'{previous_color[2]})">{html.escape(run)}</span>'
+                )
+                run = ""
+            run += char
+            previous_color = color
+        if previous_color is not None:
+            spans.append(
+                f'<span style="color:rgb({previous_color[0]},{previous_color[1]},'
+                f'{previous_color[2]})">{html.escape(run)}</span>'
+            )
+        lines.append("".join(spans))
+    body = "\n".join(lines)
+    return (
+        "<!doctype html><html><head><meta charset=\"utf-8\"></head>"
+        '<body style="margin:0;background:#fff">'
+        f'<pre style="margin:0;background:#fff;font-family:Arial,sans-serif;'
+        f'font-size:{font_size}pt;line-height:normal;white-space:pre">{body}</pre>'
+        "</body></html>"
+    )
+
+
 def asciify(
     input_path: Path,
     glyph_dir: Path,
@@ -758,6 +851,9 @@ def asciify(
     progress_fps: int,
     progress_video_width: int,
     quiet: bool,
+    html_output_path: Path,
+    html_font_size: float,
+    palette_levels: int,
 ) -> dict[str, Any]:
     glyphs = load_glyphs(
         glyph_dir=glyph_dir,
@@ -767,7 +863,7 @@ def asciify(
     )
     advances, pair_advances = load_layout_advances(layout_model)
     source = vertically_squish_source(
-        load_image_array(input_path),
+        load_color_image_array(input_path),
         vertical_squish_factor,
     )
     glyph_height = glyphs[0].height
@@ -813,6 +909,7 @@ def asciify(
                     max_chars=max_chars,
                     advances=advances,
                     pair_advances=pair_advances,
+                    palette_levels=palette_levels,
                 )
                 sample_cache[(num_lines, line_index)] = result
                 results.append(result)
@@ -858,6 +955,7 @@ def asciify(
             fps=progress_fps,
             video_width=progress_video_width,
             quiet=quiet,
+            palette_levels=palette_levels,
         )
     else:
         line_results = []
@@ -883,6 +981,7 @@ def asciify(
                     max_chars=max_chars,
                     advances=advances,
                     pair_advances=pair_advances,
+                    palette_levels=palette_levels,
                 )
             )
 
@@ -904,6 +1003,8 @@ def asciify(
     ascii_art = "\n".join(result.text for result in line_results) + "\n"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(ascii_art)
+    html_output_path.parent.mkdir(parents=True, exist_ok=True)
+    html_output_path.write_text(rich_html(line_results, html_font_size))
 
     glyph_summary = [
         {
@@ -921,6 +1022,8 @@ def asciify(
         "glyph_manifest": str(glyph_manifest) if glyph_manifest else None,
         "layout_model": str(layout_model) if layout_model else None,
         "output": str(output_path),
+        "html_output": str(html_output_path),
+        "palette_levels": palette_levels,
         "num_lines_mode": (
             "fixed"
             if fixed_num_lines is not None
@@ -955,7 +1058,7 @@ def asciify(
 
 def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Render an image as variable-width Google Docs-style ASCII art."
+        description="Render an image as color variable-width Google Docs-style ASCII art."
     )
     parser.add_argument("input", type=Path, help="Source image to asciify.")
     parser.add_argument(
@@ -993,6 +1096,12 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
         help="Text file for generated ASCII art. Defaults under output/<input-name>/.",
     )
     parser.add_argument(
+        "--html-output",
+        type=Path,
+        default=None,
+        help="Rich HTML output to open and copy into Google Docs.",
+    )
+    parser.add_argument(
         "--report",
         type=Path,
         default=None,
@@ -1020,6 +1129,12 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
         help="How to choose sample strips during automatic tuning.",
     )
     parser.add_argument("--beam-width", type=int, default=40)
+    parser.add_argument(
+        "--palette-levels",
+        type=int,
+        default=6,
+        help="RGB levels per channel; 6 produces a 216-color palette.",
+    )
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument(
         "--line-width",
@@ -1115,6 +1230,7 @@ def main(argv: Iterable[str] | None = None) -> int:
         args.font_size = 1
     default_output, default_report = default_output_paths(args.input, args.font_size)
     output_path = args.output or default_output
+    html_output_path = args.html_output or output_path.with_suffix(".html")
     report_path = args.report or default_report
     glyph_dir = args.glyph_dir
     glyph_manifest = args.glyph_manifest
@@ -1160,6 +1276,9 @@ def main(argv: Iterable[str] | None = None) -> int:
         progress_fps=args.progress_fps,
         progress_video_width=args.progress_video_width,
         quiet=args.quiet,
+        html_output_path=html_output_path,
+        html_font_size=SIZE_ONE_ACTUAL_POINTS if args.font_size == 1 else float(args.font_size or 11),
+        palette_levels=args.palette_levels,
     )
     return 0
 
