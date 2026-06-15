@@ -30,8 +30,8 @@ This uses calibrated font size `1` and writes:
 - `output/example/font_1_report.json`
 
 Select another bundled Google Docs font size with `--font-size`. Available
-sizes are `1`, `5`, `8`, `11`, `15`, and `20`. Google Docs displays size `1`
-as `2.25pt`.
+sizes are `1`, `5`, `8`, `11`, `15`, `20`, `25`, `30`, and `35`. Google Docs
+displays size `1` as `2.25pt`.
 
 ```bash
 python3 asciify_mk2.py input/example.png --font-size 11
@@ -40,7 +40,7 @@ python3 asciify_mk2.py input/example.png --font-size 11
 Render every calibrated size:
 
 ```bash
-for size in 1 5 8 11 15 20; do
+for size in 1 5 8 11 15 20 25 30 35; do
   python3 asciify_mk2.py input/example.png --font-size "$size"
 done
 ```

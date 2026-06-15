@@ -38,7 +38,8 @@ output/example/font_11_report.json
 ```
 
 Copy the text into Google Docs, select all, and apply the matching Arial font
-size. Available calibrated sizes are `1`, `5`, `8`, `11`, `15`, and `20`.
+size. Available calibrated sizes are `1`, `5`, `8`, `11`, `15`, `20`, `25`,
+`30`, and `35`.
 Google Docs displays size `1` as `2.25pt`.
 
 ## Watch the Search

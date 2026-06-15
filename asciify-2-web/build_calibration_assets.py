@@ -13,7 +13,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent
 SOURCE_ROOT = ROOT.parent / "calibration-models"
 OUTPUT_ROOT = ROOT / "calibration"
-FONT_SIZES = (1, 5, 8, 11, 15, 20)
+FONT_SIZES = (1, 5, 8, 11, 15, 20, 25, 30, 35)
 SIZE_ONE_LINE_WIDTH = 9019
 SIZE_ONE_SAFE_LINE_WIDTH = round(SIZE_ONE_LINE_WIDTH * 0.95)
 SIZE_ONE_ACTUAL_POINTS = 2.25

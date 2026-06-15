@@ -3,7 +3,7 @@ const SIZE_ONE_ACTUAL_POINTS = 2.25;
 const GLYPH_HEIGHT = 58;
 const FOREGROUND_WEIGHT = 4;
 const PALETTE_LEVELS = 6;
-const ASSET_VERSION = "20260614-color-modes-1";
+const ASSET_VERSION = "20260615-font-sizes-1";
 const WORKER_PROTOCOL_VERSION = 3;
 const BEAM_WIDTHS = {
   1: 5,
@@ -12,6 +12,9 @@ const BEAM_WIDTHS = {
   11: 30,
   15: 40,
   20: 40,
+  25: 40,
+  30: 40,
+  35: 40,
 };
 
 const form = document.querySelector("#convert-form");
@@ -49,7 +52,10 @@ const fontHints = {
   8: "Size 8 usually takes tens of seconds.",
   11: "Size 11 usually takes several seconds and is a good default.",
   15: "Size 15 usually finishes quickly.",
-  20: "Size 20 produces the smallest, fastest result.",
+  20: "Size 20 produces a small result and finishes quickly.",
+  25: "Size 25 produces a smaller result and finishes quickly.",
+  30: "Size 30 produces a very small result and finishes quickly.",
+  35: "Size 35 produces the smallest, fastest result.",
 };
 
 fontSizeSelect.addEventListener("change", () => {

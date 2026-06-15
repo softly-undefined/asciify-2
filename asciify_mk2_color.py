@@ -32,7 +32,7 @@ IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff", ".webp"}
 SIZE_ONE_LINE_WIDTH = 9019
 SIZE_ONE_SAFE_LINE_WIDTH = round(SIZE_ONE_LINE_WIDTH * 0.95)
 SIZE_ONE_ACTUAL_POINTS = 2.25
-CALIBRATED_FONT_SIZES = (1, 5, 8, 11, 15, 20)
+CALIBRATED_FONT_SIZES = (1, 5, 8, 11, 15, 20, 25, 30, 35)
 
 # Legacy custom-capture order. Calibrated runs use explicit manifests.
 DEFAULT_CAPTURE_ORDER = (
